@@ -1,17 +1,11 @@
 import * as React from "react";
-import {
-  Box,
-  Card,
-  CardContent,
-  Avatar,
-  Grid,
-  CardActions,
-  Button,
-  Typography,
-  Stack,
-} from "@mui/material";
+import { Box, Avatar, Typography, Stack } from "@mui/material";
+import useStore from "../../stores/hook";
+import ModalEditProfile from "../modal/ModalEditProfile";
 
 const InfoProfile = () => {
+  const { user } = useStore();
+
   return (
     <Box
       sx={{
@@ -46,25 +40,14 @@ const InfoProfile = () => {
       </Box>
 
       <Stack justifyContent="end" direction="row" py={1}>
-        <Button
-          variant="outlined"
-          href="#outlined-buttons"
-          sx={{
-            borderRadius: "18px",
-            border: "1px solid white",
-            color: "white",
-            textTransform: "none",
-          }}
-        >
-          Edit Profile
-        </Button>
+        <ModalEditProfile />
       </Stack>
 
       <Typography fontSize={"24px"} color={"#FFFFFF"}>
-        ✨ Stella Audhina ✨
+        {user.fullName}
       </Typography>
       <Typography fontSize={"14px"} color={"#909090"}>
-        @audhina
+        @{user.username}
       </Typography>
       <Typography fontSize={"16px"} color={"#FFFFFF"}>
         picked over by the worms, and weird fishes

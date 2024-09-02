@@ -1,8 +1,5 @@
 import { Box, Typography, Stack } from "@mui/material";
 import { useState } from "react";
-import React from "react";
-import ItemPost from "./ItemPost";
-import InfoProfile from "./InfoProfile";
 import StatusPost from "./StatusPost";
 
 const StatusList = () => {

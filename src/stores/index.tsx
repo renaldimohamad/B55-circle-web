@@ -8,19 +8,14 @@ interface StoreProps {
 
 export const Store = createContext<TStore | null>(null);
 
-// buat store provider untuk menyediakan data store di semua komponen
 export const StoreProvider: React.FC<StoreProps> = ({ children }) => {
-  //    // ini state
-  //    const [count, setCount] = useState(0);
-
-  //    // ini action
-  //    const increment = () => setCount(count + 1);
-  //    const decrement = () => setCount(count - 1);
-
   const [user, setUserState] = useState<IUser>({
+    id: 0,
     email: "",
     fullName: "",
     username: "",
+    bio: "",
+    profile_pic: "",
   });
 
   const [isLogin, setIsLogin] = useState(false);
@@ -33,13 +28,54 @@ export const StoreProvider: React.FC<StoreProps> = ({ children }) => {
 
   const clearUser = () => {
     setUserState({
+      id: 0,
       email: "",
       fullName: "",
       username: "",
+      bio: "",
+      profile_pic: "",
     });
     localStorage.removeItem("token");
+    localStorage.clear();
     setIsLogin(false);
   };
+
+  // const [users, setUsers] = useState([]);
+  // const getUsers = async (userId: number) => {
+  //   try {
+  //     const response = await api.get(`/users/userLogin${userId}`);
+
+  //     console.log(response);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const [like, setLike] = useState(false);
+
+  const setLikeFunc = async (postId: number, userId: number) => {
+    try {
+      const res = await api.post(`/like/${postId}`, { userId });
+      if (res) {
+        setLike(true);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const setUnLikeFunc = async (postId: number, userId: number) => {
+    try {
+      const res = await api.post("/like/unlike", { postId, userId });
+      if (res) {
+        setLike(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // const [users, setUsers] = useState([]);
 
   const getPosts = async () => {
     try {
@@ -53,32 +89,28 @@ export const StoreProvider: React.FC<StoreProps> = ({ children }) => {
     }
   };
 
-  // const useStore = (set) => ({
-  //   posts: [],
-  //   getPosts: async () => {
-  //     try {
-  //       const response = await api.get("/posts");
-  //       const posts = response.data.map((post) => ({
-  //         ...post,
-  //         user: post.user || { username: "Unknown User" }, // Handling missing user data
-  //       }));
-  //       set({ posts });
-  //     } catch (error) {
-  //       console.error("Failed to fetch posts", error);
-  //     }
-  //   },
-  // });
+  // const getPostById = async (id: number) => {
+  //   const res = await api.get(`/posts/${id}`);
+  //   return res;
+  // };
 
   console.log(user, isLogin);
+
+  // getUsers,
+  // users,
 
   return (
     <Store.Provider
       value={{
         user,
         isLogin,
+        like,
         setUser,
         clearUser,
+        // getPostById,
         getPosts,
+        setLikeFunc,
+        setUnLikeFunc,
         posts,
       }}
     >

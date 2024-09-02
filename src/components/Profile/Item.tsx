@@ -1,6 +1,5 @@
-import { Box, Typography, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { useState } from "react";
-import React from "react";
 import ItemPost from "../Profile/ItemPost";
 import InfoProfile from "./InfoProfile";
 

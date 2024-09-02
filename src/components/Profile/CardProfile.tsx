@@ -1,8 +1,19 @@
 import { Box, Card, Typography, Stack } from "@mui/material";
-import React from "react";
 import InfoProfile from "./InfoProfile";
+import useStore from "../../stores/hook";
 
 const CardProfile = () => {
+  const {} = useStore();
+
+  // const [fullName, setFullName] = useState("");
+
+  // useEffect(() => {
+  //   const user = JSON.parse(localStorage.getItem("user") || "{}");
+  //   if (user && user.fullName) {
+  //     setFullName(user.fullName);
+  //   }
+  // }, []);
+
   return (
     <Box sx={{}}>
       <Card
@@ -18,7 +29,7 @@ const CardProfile = () => {
         }}
       >
         <Typography sx={{ fontSize: 20, marginBottom: 1 }} color="white">
-          ✨ Stella Audhina ✨
+          My Profile
         </Typography>
 
         <InfoProfile />

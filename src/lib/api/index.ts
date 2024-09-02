@@ -1,4 +1,5 @@
 import axios from "axios";
+import { IProfileForm } from "../../types/editProfile";
 
 // intence dari axios
 export const api = axios.create({
@@ -12,4 +13,12 @@ export const setAuthToken = (token?: string) => {
   } else {
     delete api.defaults.headers.common["Authorization"];
   }
+};
+
+// Update || Edit Profile
+export const update = async (user_id: string, body: IProfileForm) => {
+  const response = await api.put(`/auth/${user_id}`, body);
+
+  console.log(response.data);
+  return response.data;
 };

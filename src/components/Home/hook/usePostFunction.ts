@@ -13,7 +13,7 @@ export const usePostFunction = () => {
 
       const username = user?.username || "Unknown User";
       await getPosts();
-      toast.success(`Post ${username} Success`);
+      toast.success(`Post Success @${username}`);
     } catch (error) {
       console.log(error);
       toast.error("Post Failed");

@@ -1,5 +1,6 @@
+import { IProfileForm } from "../../../types/editProfile";
 import { IRegisterForm } from "../../../types/Register";
-import { api } from "../index";
+import { api } from "..";
 
 // LOGIN
 export const login = async (email: string, password: string) => {
@@ -26,5 +27,12 @@ export const checkAuth = async (token: string) => {
     },
   });
 
+  return response.data;
+};
+
+export const update = async (user_id: string, body: IProfileForm) => {
+  const response = await api.put(`/auth/${user_id}`, body);
+
+  console.log(response.data);
   return response.data;
 };

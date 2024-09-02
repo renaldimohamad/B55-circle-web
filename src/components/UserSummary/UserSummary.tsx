@@ -1,4 +1,5 @@
-import { Avatar, Box, Button, colors, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Button, Stack, Typography } from "@mui/material";
+import ModalEditProfile from "../modal/ModalEditProfile";
 
 const UserSummary: React.FC<{
   avatar: string;

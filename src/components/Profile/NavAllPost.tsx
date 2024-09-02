@@ -1,6 +1,5 @@
-import { Box, Typography, Stack } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import { Icon } from "@iconify/react";
 
 const NAV_ITEMS = [
   {

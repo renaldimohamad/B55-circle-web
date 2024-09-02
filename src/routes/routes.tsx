@@ -1,6 +1,5 @@
 import { RouteObject } from "react-router-dom";
 import Home from "../pages/Home";
-import About from "../pages/About";
 import RootLayout from "../layout/RootLayout";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
@@ -8,11 +7,10 @@ import Forgot from "../pages/Forgot";
 import ResetPassword from "../pages/ResetPassword";
 import AuthLayout from "../layout/AuthLayout";
 import Content from "../pages/Content";
-import Navbar from "../pages/Navbar";
-import Search from "../pages/Search";
 import Status from "../pages/Status";
 import Profile from "../pages/Profile";
-import SearchnoResault from "../pages/SearchnoResault";
+import SearchAccount from "../components/Search/SearchAccount";
+import Follows from "../pages/Follows";
 
 const routes: RouteObject[] = [
   {
@@ -25,11 +23,11 @@ const routes: RouteObject[] = [
       },
       {
         path: "search",
-        element: <SearchnoResault />,
+        element: <SearchAccount />,
       },
       {
         path: "follows",
-        element: <>About</>,
+        element: <Follows />,
       },
       {
         path: "profile",
