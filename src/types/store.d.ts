@@ -38,6 +38,7 @@ export interface IUserList {
 }
 
 export interface IProfile {
+  id: number;
   fullName?: string;
   username?: string;
   bio?: string;

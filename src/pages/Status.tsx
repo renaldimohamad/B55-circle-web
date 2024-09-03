@@ -1,8 +1,4 @@
 import { Box, Typography, Stack } from "@mui/material";
-import { Icon } from "@iconify/react/dist/iconify.js";
-import React from "react";
-
-import StatusList from "../components/Profile/StatusList";
 import DetailStatus from "../components/Status/DetailStatus";
 
 const Status = () => {

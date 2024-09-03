@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import ForgotForm from "../components/forgot/ForgotForm";
-import React from "react";
 
 function Forgot() {
   return (

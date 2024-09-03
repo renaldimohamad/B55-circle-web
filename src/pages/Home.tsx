@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 import { Box, Stack, Typography } from "@mui/material";
 import Galery from "../components/Home/Galery";
 import GaleryAdd from "../components/Home/GaleryAdd";
 import PostList from "../components/Home/PostList";
 
 const Home = () => {
-  const [users, setUsers] = useState([
+  const [users] = useState([
     {
       avatar: "/assetss/images/Phoyo-IndahPra.png",
       fullname: "Indra Pra Karya",
@@ -69,7 +69,7 @@ const Home = () => {
     },
   ]);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <Box>

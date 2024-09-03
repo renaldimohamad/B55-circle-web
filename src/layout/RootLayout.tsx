@@ -1,11 +1,10 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { Box, Stack } from "@mui/material";
 import Sidebar from "../components/sidebar/Index";
 import useStore from "../stores/hook";
 import CardMyProfile from "../components/sidebar/CardMyProfile";
 import SugestedFriends from "../components/sidebar/SugestedFriends";
 import CopyrightPanel from "../components/sidebar/CopyrightPanel";
-import axios from "axios";
 
 const RootLayout = () => {
   const { isLogin } = useStore();

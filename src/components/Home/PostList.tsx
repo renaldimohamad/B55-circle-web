@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import useStore from "../../stores/hook";
-import { Box, Avatar, Typography, Stack, IconButton } from "@mui/material";
-import { Icon } from "@iconify/react/dist/iconify.js"; // Import API utilities
+import { Box, Avatar, Typography, Stack } from "@mui/material";
+import { Icon } from "@iconify/react/dist/iconify.js";
 import Like from "../like/like";
 import { IPostModel } from "../../types/post";
 
 const PostList = () => {
-  const { getPosts, posts, user } = useStore();
+  const { getPosts, posts } = useStore();
   useEffect(() => {
     getPosts();
   }, [posts]);

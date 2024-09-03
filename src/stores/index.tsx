@@ -105,13 +105,12 @@ export const StoreProvider: React.FC<StoreProps> = ({ children }) => {
         user,
         isLogin,
         like,
+        posts,
         setUser,
         clearUser,
-        // getPostById,
         getPosts,
         setLikeFunc,
         setUnLikeFunc,
-        posts,
       }}
     >
       {children}

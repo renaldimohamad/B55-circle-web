@@ -1,7 +1,6 @@
 import { api } from "../../../lib/api";
 import useStore from "../../../stores/hook";
 import { toast } from "react-toastify";
-import React from "react";
 
 export const usePostFunction = () => {
   const { getPosts, user } = useStore();
@@ -10,6 +9,8 @@ export const usePostFunction = () => {
       const res = await api.post("/posts", {
         content,
       });
+
+      console.log(res);
 
       const username = user?.username || "Unknown User";
       await getPosts();
